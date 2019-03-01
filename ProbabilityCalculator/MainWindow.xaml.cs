@@ -20,9 +20,41 @@ namespace ProbabilityCalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        CalculateDual calc = new CalculateDual();
         public MainWindow()
         {
             InitializeComponent();
+            calc.init(this);
+        }
+
+        private void Changed_CountA(object sender, TextChangedEventArgs e)
+        {
+            calc.update(sender);
+        }
+
+        private void Changed_CountB(object sender, TextChangedEventArgs e)
+        {
+            calc.update(sender);
+        }
+
+        private void Clicked(object sender, RoutedEventArgs e)
+        {
+            calc.counter(sender);
+        }
+
+        private void Phenomenon_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Changed_Phenomenon(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Clicked_Add(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
