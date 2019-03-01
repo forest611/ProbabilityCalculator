@@ -17,8 +17,8 @@
                     <TextBlock Text="Bが起こった回数" Grid.ColumnSpan="1" FontSize="24" Margin="516,69,100,435"/>
                     <TextBlock Text="Aの確率" Grid.ColumnSpan="1" FontSize="24" Margin="100,264,590,240"/>
                     <TextBlock Text="Bの確率" Grid.ColumnSpan="1" FontSize="24" Margin="516,264,170,240"/>
-                    <TextBlock x:Name="Probability_A" Grid.ColumnSpan="1" FontSize="24" Margin="100,300,518,204" TextAlignment="Right"><Run Text="0."/><Run Text="0"/><Run Text="%"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock x:Name="Probability_B" Grid.ColumnSpan="1" FontSize="24" Margin="521,300,100,204" TextAlignment="Right"><Run Text="0.0"/><Run Text="%"/></TextBlock>
+                    <TextBlock x:Name="Probability_A" Grid.ColumnSpan="1" FontSize="24" Margin="100,300,518,204" TextAlignment="Right" Text="0.0%"/>
+                    <TextBlock x:Name="Probability_B" Grid.ColumnSpan="1" FontSize="24" Margin="521,300,100,204" TextAlignment="Right" Text="0.0%"/>
                     <TextBlock Text="数取器" Grid.ColumnSpan="1" FontSize="36" Margin="272,326,274,160" TextAlignment="Center"/>
                     <TextBox x:Name="Count_A" FontSize="22" Margin="100,0,516,402" Height="28" VerticalAlignment="Bottom"  TextAlignment="Right" TextChanged="Changed_CountA"/>
                     <TextBox x:Name="Count_B" FontSize="22" Margin="516,0,100,402" Height="28" VerticalAlignment="Bottom"  TextAlignment="Right"  TextChanged="Changed_CountB"/>
@@ -30,14 +30,13 @@
             </TabItem>
             <TabItem Header="A~">
                 <Grid HorizontalAlignment="Left"  Width="790" Margin="0,0,0,0" Grid.ColumnSpan="1" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="268*"/>
-                        <RowDefinition Height="273*"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="各現象が起こる確率" Grid.ColumnSpan="1" FontSize="36" Margin="244,10,244,203.5"/>
-                    <TextBlock Text="現象の追加" Grid.ColumnSpan="1" FontSize="24" Margin="160,69,505,159.5" RenderTransformOrigin="0.56,0.423"/>
-                    <TextBox x:Name="Phenomenon" Text="現象名" FontSize="20" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147" Margin="343,72,0,0" TextChanged="Changed_Phenomenon"/>
+                    <TextBlock Text="各現象が起こる確率" Grid.ColumnSpan="1" FontSize="36" Margin="244,10,244,100"/>
+                    <TextBlock Text="現象の追加" Grid.ColumnSpan="1" FontSize="24" Margin="160,69,505,41" RenderTransformOrigin="0.56,0.423"/>
+                    <TextBox x:Name="Phenomenon" Text="現象名" FontSize="20" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147" Margin="343,72,0,0" />
                     <Button x:Name="AddPhenomenon" Content="追加" FontSize="20" HorizontalAlignment="Right" Width="107" Height="32" VerticalAlignment="Top" Margin="0,72,129,0" Click="Clicked_Add"/>
+                    <ScrollViewer Margin="0,109,0,0">
+                        <StackPanel x:Name="PhenomenonPanel" Grid.RowSpan="2"/>
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
         </TabControl>
